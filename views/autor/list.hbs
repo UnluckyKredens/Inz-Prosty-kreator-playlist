@@ -1,0 +1,32 @@
+<h3><a class="btn btn-secondary" href="/muzyka/List">Playlista</a>
+    <a class="btn btn-secondary" href="/autor/dodaj">Dodaj nowego autora</a>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Twoi
+    Autorzy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-secondary" href="/">Wyloguj</a>
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Autor</th>
+            <th>Tytuły</th>
+            <th></th>
+        </tr>
+    </thead>
+    </tbody>
+    {{#each list}}
+    <tr>
+        <td>{{this.Imie}} {{this.Nazwisko}}
+        <td>
+            {{#each this.Muzyka}}
+            <li>{{this.Tytul}}</li>
+            {{/each}}
+        <td>
+            <a class="btn btn-danger" href="/autor/usun/{{this._id}}"
+                onclick="return confirm('Na pewno chcesz usunąć autora?');">Usuń Autora</a>
+        </td>
+
+    </tr>
+    {{/each}}
+    </tbody>
+</table>

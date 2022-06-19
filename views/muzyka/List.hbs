@@ -1,0 +1,30 @@
+<h3><a class="btn btn-secondary" href="/muzyka">Dodaj nową piosenkę</a>
+    <a class="btn btn-secondary" href="/autor/list">Dodaj autora</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Witaj! Oto Twoja
+    Playlista&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-secondary" href="/">Wyloguj</a>
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Autor</th>
+            <th>Tytuł</th>
+            <th>Link do YouTube</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.Autor.Imie}} {{this.Autor.Nazwisko}}</td>
+            <td>{{this.Tytul}}</td>
+            <td><a href={{this.linkYT}}>{{this.linkYT}}</a></td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/muzyka/{{this._id}}">Edytuj</a>
+                <a class="btn btn-danger btn-sm" href="/muzyka/delete/{{this._id}}"
+                    onclick="return confirm('Na pewno chcesz usunąć tę piosenkę z playlisty?');">Usuń z playlisty</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+<h3>{{viewTitle}}</h3>
+<form action="/muzyka" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{muzyka._id}}">
+    <div class="form-group">
+        <label>Autor</label>
+        <select required class="form-control" name="Autor" placeholder="Autor" value="{{muzyka.Autor._id}}">
+            {{#each authors}}
+                <option value="{{this._id}}">{{this.Imie}} {{this.Nazwisko}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Tytuł</label>
+        <input required type="text" class="form-control" name="Tytul" placeholder="Tytuł" value="{{muzyka.Tytul}}">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Link do YouTube</label>
+            <input required type="text" class="form-control" name="linkYT" placeholder="Link do YouTube"
+                value="{{muzyka.linkYT}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn  btn-outline-primary">Dodaj do playlisty</button>
+        <a class="btn  btn-outline-secondary" href="/muzyka/list">Pokaż moją personalną Playlistę</a>
+    </div>
+</form>

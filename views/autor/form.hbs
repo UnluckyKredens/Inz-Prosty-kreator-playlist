@@ -1,0 +1,16 @@
+<h3>{{viewTitle}}</h3>
+<form action="/autor" method="POST" autocomplete="off">
+    {{!-- <input type="hidden" name="_id" value="{{autor._id}}"> --}}
+<div class="form-group">
+        <label>Imie</label>
+        <input required type="text" class="form-control" name="Imie" placeholder="Autor" value="{{autor.Imie}}">
+    </div>
+    <div class="form-group">
+        <label>Nazwisko</label>
+        <input required type="text" class="form-control" name="Nazwisko" placeholder="Tytuł" value="{{autor.Nazwisko}}">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn  btn-outline-primary">Dodaj</button>
+        <a class="btn  btn-outline-secondary" href="/autor/list">Pokaż Autorów</a>
+    </div>
+</form>
